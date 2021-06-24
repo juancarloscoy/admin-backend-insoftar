@@ -10,13 +10,17 @@ const UsuarioSchema = new Schema({
         required: true
     },
     apellidos: {
-        type: String,
-        require: true
+        type: String
     },
-    cedula: { type: Number },
+    cedula: {
+        type: Number,
+        required: true,
+        unique: true
+    },
     correo: {
         type: String,
-        validate: [isEmail, 'Correo invalido']
+        required: true,
+        unique: true
     },
     telefono: { type: Number }
 });
