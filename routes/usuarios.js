@@ -16,7 +16,6 @@ router.get('/', async (req, res = response) => {
 router.post('/', [
     check('correo', 'El email no es valido').isEmail(),
     check('cedula', 'Cedula debe ser numerica').isNumeric(),
-    // check('telefono', 'Telefono debe ser numerico').isNumeric(),
     check('nombres', 'El nombre es requerido').not().isEmpty(),
 ], async (req, res) => {
     const { cedula, correo } = req.body;
